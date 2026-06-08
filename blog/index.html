@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ・お知らせ｜高宮サンディ</title>
+<meta name="description" content="高宮サンディのブログ・お知らせ一覧。新メニューや季節の情報など、来店前に役立つ情報を発信しています。">
+<link rel="icon" href="../images/sandy_icon.png">
+<link rel="canonical" href="https://takamiya-sundy.com/blog/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="高宮サンディ">
+<meta property="og:title" content="ブログ・お知らせ｜高宮サンディ">
+<meta property="og:url" content="https://takamiya-sundy.com/blog/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body data-page="blog">
+<div id="top"></div>
+<div id="shared-header"></div>
+
+<main id="main">
+
+  <section class="section is-inview page-head">
+    <div class="section-inner">
+      <h1 class="page-title">ブログ・お知らせ</h1>
+      <p class="page-lead">新メニューや季節のご案内など、最新情報をお届けします。</p>
+    </div>
+  </section>
+
+  <section class="section is-inview">
+    <div class="section-inner">
+      <div id="blogList" class="blog-grid"></div>
+      <p id="blogStatus" style="margin-top:14px; opacity:.75;"></p>
+    </div>
+  </section>
+
+  <div id="shared-bottom"></div>
+  <a href="#top" class="page-top" aria-label="ページの先頭へ"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></a>
+
+</main>
+
+<script src="../common.js"></script>
+<script>
+(async () => {
+  const listEl   = document.getElementById('blogList');
+  const statusEl = document.getElementById('blogStatus');
+
+  function esc(s) {
+    return String(s ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;')
+      .replaceAll('>','&gt;').replaceAll('"','&quot;');
+  }
+  function fmtDate(d) {
+    const m = String(d || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return m ? `${m[1]}.${m[2]}.${m[3]}` : esc(d || '');
+  }
+
+  try {
+    if (statusEl) statusEl.textContent = '読み込み中…';
+
+    const res = await fetch('/blog/posts.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('posts.jsonが読み込めません（' + res.status + '）');
+    const posts = (await res.json()).posts;
+    if (!Array.isArray(posts)) throw new Error('posts.jsonの形式が不正です');
+
+    posts.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+
+    if (posts.length === 0) {
+      if (statusEl) statusEl.textContent = 'まだ記事がありません。';
+      return;
+    }
+
+    listEl.innerHTML = posts.map(p => {
+      const href = `/blog/posts/post?slug=${encodeURIComponent(p.slug)}`;
+      const bg   = p.image ? `style="background-image:url('${esc(p.image)}');"` : '';
+      return `
+        <article class="blog-card">
+          <a href="${href}">
+            <div class="blog-image" ${bg}></div>
+            <div class="blog-body">
+              <time class="blog-date" datetime="${esc(p.date)}">${fmtDate(p.date)}</time>
+              <h3 class="blog-title">${esc(p.title)}</h3>
+              <p class="blog-excerpt">${esc(p.excerpt)}</p>
+            </div>
+          </a>
+        </article>`;
+    }).join('');
+
+    if (statusEl) statusEl.textContent = '';
+
+  } catch(e) {
+    if (statusEl) statusEl.textContent = 'エラー：' + (e?.message || e);
+    console.error(e);
+  }
+})();
+</script>
+
+</body>
+</html>
