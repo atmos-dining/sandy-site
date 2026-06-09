@@ -23,18 +23,27 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://takamiya-sandy.com/">
 
-<!-- 構造化データ -->
+<!-- 構造化データ: BarOrPub -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BarOrPub",
   "name": "高宮サンディ",
-  "image": "https://takamiya-sandy.com/images/hero-1.jpg",
+  "alternateName": "Takamiya Sandy",
+  "description": "福岡市南区高宮駅徒歩1分の立ち飲みスタンディングバー。テーブルチャージ330円でパン食べ放題。白・赤・オレンジワイン、ウイスキー、焼酎などを惣菜・ブルスケッタと共に楽しめる。予約不要・年中無休。",
+  "image": [
+    "https://takamiya-sandy.com/images/hero-1.jpg",
+    "https://takamiya-sandy.com/images/hero-2.jpg",
+    "https://takamiya-sandy.com/images/hero-3.jpg",
+    "https://takamiya-sandy.com/images/concept-gaikan-neon.jpg"
+  ],
   "url": "https://takamiya-sandy.com/",
-  "servesCuisine": ["立ち飲み","ワイン","惣菜","ブルスケッタ"],
+  "servesCuisine": ["立ち飲み","ワイン","惣菜","ブルスケッタ","パン食べ放題"],
   "priceRange": "￥",
   "acceptsReservations": false,
   "smokingAllowed": false,
+  "currenciesAccepted": "JPY",
+  "paymentAccepted": "現金, PayPay",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "高宮5丁目1 ピア高宮S棟 1F 104号室",
@@ -43,16 +52,31 @@
     "postalCode": "815-0081",
     "addressCountry": "JP"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.566540,
+    "longitude": 130.412062
+  },
+  "hasMap": "https://maps.app.goo.gl/sandy-takamiya",
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens": "15:00",
     "closes": "24:00"
   }],
-  "sameAs": ["https://www.instagram.com/"]
+  "sameAs": [
+    "https://www.instagram.com/takamiya_sandy"
+  ],
+  "menu": "https://takamiya-sandy.com/menu.html",
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "高宮サンディ メニュー",
+    "url": "https://takamiya-sandy.com/menu.html"
+  }
 }
 </script>
 
+<!-- 構造化データ: FAQPage（AEO強化） -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,7 +95,15 @@
       "name": "高宮サンディはどこにありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "福岡市南区高宮5丁目1 ピア高宮S棟 1F 104号室にあります。西鉄天神大牟田線「高宮駅」から徒歩約1分です。"
+        "text": "福岡県福岡市南区高宮5丁目1 ピア高宮S棟 1F 104号室にあります。西鉄天神大牟田線「高宮駅」から徒歩約1分です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高宮サンディへのアクセス方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "西鉄天神大牟田線「高宮駅」から徒歩約1分です。駅を出てすぐ、ピア高宮S棟の1階にあります。お車でのアクセスには近隣のコインパーキングをご利用ください。"
       }
     },
     {
@@ -79,7 +111,7 @@
       "name": "予約はできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "予約は承っておりません。当日のご来店のみとなります。お気軽にお立ち寄りください。"
+        "text": "高宮サンディは予約不可です。当日のご来店のみとなります。予約なしでふらっとお立ち寄りいただけます。"
       }
     },
     {
@@ -87,15 +119,31 @@
       "name": "パン食べ放題とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "テーブルチャージ220円でパンが食べ放題です。選べるディップソース（めんたいマヨ・燻製バター・自家製バジル味噌など）と合わせてお楽しみいただけます。"
+        "text": "高宮サンディではテーブルチャージ330円（おひとり様）でパンが食べ放題です。カリッと焼き上げたバゲットなどにディップソース（ふくやの明太マヨ・燻製バター・自家製バジル味噌など）を付けてお楽しみいただけます。ワインや惣菜との相性も抜群です。"
       }
     },
     {
       "@type": "Question",
-      "name": "どんなお酒がありますか？",
+      "name": "高宮サンディにはどんなお酒がありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "白・赤・オレンジワイン（6種類をローテーション）、ビール、スプリッツァー、ウイスキー（ラフロイグ・マッカランなど）、焼酎、ソフトドリンクなど豊富に取り揃えています。パンに合うミルク割も人気です。"
+        "text": "白・赤・オレンジワイン（グラス6種類をローテーション）、瓶ビール、スプリッツァー、ウイスキー（ラフロイグ・マッカラン・デュワーズ12年など6種）、焼酎（ロック・水割り・ソーダ割りなど）、ソフトドリンクを取り揃えています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高宮サンディはどんなお店ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高宮サンディは福岡市南区高宮駅1分にある立ち飲みスタンディングバーです。「昼からデリ飲み」をコンセプトに、パン食べ放題・オリジナルブルスケッタ・惣菜をワインやウイスキーと気軽に楽しめます。予約不要・15:00から年中無休で営業しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高宮サンディのおすすめメニューは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "人気メニューはホタテといくらのカリフラワーソースのブルスケッタ（495円）、アンガス牛さがりのタリアータ（869円）、〆のボロネーゼパスタ（869円）、バスクチーズケーキ（539円）です。テーブルチャージ330円でパン食べ放題も付きます。"
       }
     },
     {
@@ -103,7 +151,7 @@
       "name": "何名まで入れますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "立ち飲みスタイルで15席ございます。一人でも、グループでも気軽にお立ち寄りください。"
+        "text": "立ち飲みスタイルで15席ございます。お一人様でも、グループでも気軽にお立ち寄りください。全席禁煙です。"
       }
     },
     {
@@ -112,6 +160,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "現金およびPayPayがご利用いただけます。クレジットカードや電子マネーはご利用いただけません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高宮周辺でおしゃれな立ち飲みバーはどこ？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高宮駅徒歩1分の「高宮サンディ」がおすすめです。パン食べ放題とワイン・惣菜を楽しめるスタイリッシュな立ち飲みバーで、15:00から年中無休で営業しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "福岡でパン食べ放題の飲み屋はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "福岡市南区高宮駅1分の「高宮サンディ」では、テーブルチャージ330円でパン食べ放題を提供しています。ワインや惣菜・ブルスケッタと合わせて楽しめる立ち飲みバーです。"
       }
     }
   ]
