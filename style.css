@@ -399,17 +399,14 @@ body:not(.is-home) .section {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(1.08);
   transition: opacity 1.4s ease;
+  animation: kenburns 8s ease-in-out infinite alternate;
 }
-.hero-slide.is-active {
-  opacity: 1;
-  animation: kenburns 2.6s ease-out forwards;
-}
+.hero-slide.is-active { opacity: 1; }
 
 @keyframes kenburns {
   from { transform: scale(1); }
-  to   { transform: scale(1.08); }
+  to   { transform: scale(1.12); }
 }
 
 .hero-slide-1 { background-image: url('./images/hero-1.jpg'); }
