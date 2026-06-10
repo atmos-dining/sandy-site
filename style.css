@@ -399,12 +399,12 @@ body:not(.is-home) .section {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.2s ease;
-  transform: scale(1);
+  transform: scale(1.08);
+  transition: opacity 1.4s ease;
 }
 .hero-slide.is-active {
   opacity: 1;
-  animation: kenburns 2.4s ease-out forwards;
+  animation: kenburns 2.6s ease-out forwards;
 }
 
 @keyframes kenburns {
