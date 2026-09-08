@@ -318,7 +318,7 @@
       </div>
 
       <div class="more-link">
-        <a href="./menu.html" class="btn-secondary">お料理メニューを見る →</a>
+        <a href="/menu.html" class="btn-secondary">お料理メニューを見る →</a>
       </div>
     </div>
   </section>
@@ -348,7 +348,7 @@
       </div>
 
       <div class="more-link">
-        <a href="./drink.html" class="btn-secondary">ドリンクメニューを見る →</a>
+        <a href="/drink.html" class="btn-secondary">ドリンクメニューを見る →</a>
       </div>
     </div>
   </section>
@@ -376,7 +376,7 @@
 
       <div class="blog-grid" id="blog-latest-grid">
         <article class="blog-card">
-          <a href="./blog/index.html">
+          <a href="/blog/">
             <div class="blog-body" style="padding:24px;">
               <h3 class="blog-title">ブログ一覧を見る</h3>
               <p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>
@@ -386,7 +386,7 @@
       </div>
 
       <div class="more-link">
-        <a href="./blog/index.html" class="btn-secondary">ブログ一覧を見る →</a>
+        <a href="/blog/" class="btn-secondary">ブログ一覧を見る →</a>
       </div>
     </div>
   </section>
@@ -437,7 +437,7 @@
         const el  = document.createElement('article');
         el.className = 'blog-card';
         el.innerHTML = `
-          <a href="./blog/posts/post?slug=${encodeURIComponent(p.slug)}">
+          <a href="/blog/posts/post?slug=${encodeURIComponent(p.slug)}">
             <div class="blog-image" style="${bg}"></div>
             <div class="blog-body">
               <time class="blog-date" datetime="${esc(p.date)}">${fmtDate(p.date)}</time>
@@ -451,7 +451,7 @@
     .catch(() => {
       grid.innerHTML = `
         <article class="blog-card">
-          <a href="./blog/index.html">
+          <a href="/blog/">
             <div class="blog-body" style="padding:24px;">
               <h3 class="blog-title">ブログ一覧を見る</h3>
               <p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>
